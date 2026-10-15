@@ -1,70 +1,40 @@
-﻿# DSP Mods by Soar Qin
+# soarqin-MechaDronesTweaks
 
-## [CheatEnabler](CheatEnabler)
+Handle both value and address reads for drone-speed display while preserving native research state and energy behavior.
 
-Add various cheat functions while disabling abnormal determinants
-添加一些作弊功能，同时屏蔽异常检测
+The analysis and proposed fixes in this handoff were developed with assistance from the GPT 6.1 Sol model. English documentation accompanies the code to explain what changed, why it changed, and the available validation results.
 
-## [CompressSave](CompressSave)
+[Review map](REVIEW_GUIDE.md) · [Related mods and code references](RELATED_MODS.md) · [Detailed changes](CHANGELOG.md) · [Build/review notes](BUILD.md) · [Assembly metadata](metadata.json)
 
-Moved [to another repo](https://github.com/soarqin/DSP_Mods_TO/tree/master/CompressSave)
+Prepared for maintainer review on 15 October 2026. This is a local modified build, not an official upstream release, published package or pull request.
 
-## [Dustbin](Dustbin)
+Installed plugin version(s): **1.1.5**. Existing package manifest version: **1.1.4**. Manifest, plugin and assembly versions are separate; the original manifest is retained.
 
-Can turn Storages and Tanks into Dustbin(Destroy incoming items)
-储物仓和储液罐可以转变为垃圾桶(销毁送进的物品)
+## Package layout
 
-## [HideTips](HideTips)
+- `InstalledPackage/`: actual installed mod files and companion preloader when present.
+- `Source/Reconstructed/`: full projects reconstructed from the exact installed assemblies.
+- `Source/EarlierWorkingSource/`, `PortedWorkingSource/`, `UpstreamSnapshot/`: source snapshots when available; provenance is recorded separately.
+- `Evidence/`: development helpers, focused check sources and structured validation/installation records.
+- `Diffs/`: source-port patches and normalized structural IL comparison.
+- `Baselines/`: previous binary and its provenance for review, not an automatic rollback.
 
-Hide/Disable various tutorial tips/messages
-隐藏/屏蔽各种引导提示/消息
+## Plugin identifiers and declared dependencies
 
-## [LabOpt](LabOpt)
+- `org.soardev.mechadronestweaks` — MechaDronesTweaks 1.1.5; dependencies: com.dkoppstein.plugin.DSP.FastDrones | soft.
 
-Performance optimizations for Matrix Labs
-Marked as obsoleted temporarily, needs more investigation about LabComponent's mechanism
-优化研究站性能
-暂时标识为过期，需要更多关于LabComponent机制的研究
+## Installed assembly hashes
 
-## [LogisticMiner](LogisticMiner)
+| Recorded path | SHA-256 |
+|---|---|
+| `plugins/soarqin-MechaDronesTweaks/MechaDronesTweaks.dll` | `28aafb514adcb0083230fba46bea637d933d532460f18de78865bac027c84aed` |
 
-Logistic Storages can mine all ores/water on current planet
-物流塔可以采集当前星球的全部矿产(以及水)
+## Scope and limitations
 
-## [LuaScriptEngine](LuaScriptEngine)
-Write mod functions in lua scripts  
-用lua脚本编写mod功能
+Not every source project has been rebuilt. Historical compile/test evidence is limited to its recorded hashes. Headless/embedded-Mono checks do not establish real Unity UI, the user's world, all-mod startup, multiplayer or sustained-memory acceptance.
 
-## [MechaDronesTweaks](MechaDronesTweaks)
+## Independent review package
 
-Some tweaks for mecha drones and build functions(Successor to FastDrones MOD)
-机甲建设机和建设功能调整(FastDrones MOD的后继者)
+Send this entire directory, with all subdirectories, to this mod's maintainer. No sibling maintainer directory or parent-level report is required for code review. There are **0** related-mod reference copies under `RelatedMods/`. Read `RELATED_MODS.md` for direct dependencies, concrete compiled member calls, shared native integration points and source snippets. Required installed dependencies of a copy are flattened into this directory; no recursive RelatedMods trees are produced.
 
-## [OverclockEverything](OverclockEverything)
-
-Boost nearly all structures
-加速几乎所有建筑功能
-
-## [PoolOpt](PoolOpt)
-
-Optimize memory pools on loading gamesaves
-加载游戏存档时优化内存池的使用
-
-## [UniverseGenTweaks](UniverseGenTweaks)
-
-Universe Generator Tweak
-宇宙生成参数调节
-
-## [UserCloak](UserCloak)
-
-Cloak(Fake) user account info
-隐匿(伪装)用户账号信息
-
-## [UXAssist](UXAssist)
-
-Some functions and patches for better user experience
-一些提升用户体验的功能和补丁
-
-## [LiveStreamAssist](LiveStreamAssist)
-
-Keeps the statistics window active for live streams by switching between the Production Statistics and Dyson Sphere tabs every 15 to 30 seconds.
+Uninstalled optional declarations are listed explicitly; no nonexistent mod is claimed to be included. The actual game/Unity/BepInEx SDK remains an external build prerequisite. Historical test/build scripts may need path adaptation; this is a complete review package, not a guaranteed one-command clean rebuild. See `STANDALONE_VERIFICATION.json` and `PACKAGE_SHA256SUMS.txt` for the local package check.
